@@ -1,9 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
+    <head>
+        <style>
+            form {
+                margin-left: 30%;
+                margin-top: 15%;
+                width: 50%;
+            }
+            .form-container{
+                width: 250px;
+                height: 240px;
+                background-color:#ebeeed;
+                align-self: center;
+                border-style:solid;
+                border-radius: 5px;
+                border-width: 2px;
+                border-color:#b5b7b6;
+                color: #909292;
+                font-family:sans-serif;
+                box-shadow: 0 50px 6px -6px rgba(167, 158, 158, 0.75);
+
+            }
+            .input-place-holder{
+                align-self: center;
+                width: 180px;
+                border-style:solid;
+                border-width: 2px;
+                border-color:#d7d7d7;
+                border-radius: 5px;
+                padding:8px;
+                margin: 10px 0px 0px 20px;
+            }
+            #sign-in-btn{
+                background-color: #e94234;
+                color: white;
+                width: 195px;
+                height: 30px;
+                border-style: solid;
+                border-width: 2px;
+                border-color: #beb6b4;
+                font-family:'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+                margin: 0px 0px 0px 20px;
+            }
+            .heading-form{
+                text-align: center;
+                align-self: center;
+                color: #909292;
+                padding:5px;
+                margin: 0px;
+            }
+            a{
+                text-decoration: none;
+                color: #909292;
+            }
+            ::placeholder{
+                color:#beb6b4 ;
+                margin-left: 25px;
+                font-family: sans-serif;
+                font-size: 12px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div>
+            <form class="form-container">
+                <h5 class="heading-form">Login</h5>
+                <hr style="color:#909292">
+                <label></label>
+                <input class="input-place-holder" type="text" name="username" placeholder="       Username">
+                <br><br>
+                <label></label>
+                <input class="input-place-holder" type="password" name="password" placeholder="       Password"><br>
+                <small  style="margin: 0px 0px 0px 150px; font-size: 12px;"><sup><a href="#">forgot password?</a></sup></small>
+                <br><br>
+                <button id="sign-in-btn" type="submit" method="post">SIGN IN</button>
+            </form>
+        </div>
+        
+    </body>
 </html>
