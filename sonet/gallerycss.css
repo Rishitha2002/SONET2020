@@ -23,3 +23,10 @@
 .notee{
     background-color: rgba(139, 211, 211, 0.164);
 }
+.carousel-image{
+    padding:5%;
+    width:45%;
+}
+.carousel-item{
+    background-image:linear-gradient(to right, rgba(255, 0, 179, 0.418), rgba(4, 160, 160,0.418), rgba(128, 126, 0,0.418) ) ;
+}
