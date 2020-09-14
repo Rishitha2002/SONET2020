@@ -1,0 +1,32 @@
+.images{
+    width: 80%;
+    height: auto;
+    border-style: solid;
+    border-image: stretch;
+    border-color: black;
+
+}
+.backButton{
+    background-color: rgba(139, 211, 211, 0.164);
+    width:4%;
+}
+.imageIntro{
+    width: 45%;
+    height: auto;
+    border: rgba(139, 211, 211, 0.164);
+    border-style: solid;
+    box-shadow: 23px 50px 6px -6px rgba(167, 158, 158, 0.5);
+}
+.note{
+    font-size: x-large; 
+}
+.notee{
+    background-color: rgba(139, 211, 211, 0.164);
+}
+.carousel-image{
+    padding:5%;
+    width:45%;
+}
+.carousel-item{
+    background-image:linear-gradient(to right, rgba(255, 0, 179, 0.418), rgba(4, 160, 160,0.418), rgba(128, 126, 0,0.418) ) ;
+}
