@@ -1,0 +1,90 @@
+.images{
+    width: 80%;
+    height: auto;
+    /*border-style: solid;
+    border-image: stretch;
+    border-color: black;*/
+    box-shadow: 10px 10px 10px 10px rgba(179, 134, 151, 0.4);
+
+}
+.backButton{
+    background-color: rgba(165,42,42,0.400);
+    width:4%;
+}
+
+.imageIntro{
+    width: 45%;
+    height: auto;
+    border: rgba(139, 211, 211, 0.164);
+    border-style: solid;
+    box-shadow: 23px 50px 6px -6px rgba(167, 158, 158, 0.5);
+}
+.note{
+    font-size: x-large;
+    background-color: rgba(165,42,42,0.400); 
+}
+.notee{
+    background-color: rgba(139, 211, 211, 0.164);
+}
+.hover_front:hover{
+    width: 48%;
+    height: auto;   
+}
+
+.container{
+    background-color: rgba(58, 110, 110, 0.171);
+}
+.loginTag{
+    float: right;
+}
+.bell-icon{
+    width:5%;
+}
+.image-icon{
+    width: 10%;
+}
+.login-text{
+    text-decoration: none;
+}
+a{
+    color: black;
+}
+a:hover{
+    color: black;
+}
+.meme-icon{
+    width: 7%;
+}
+.nav{
+    background-color: rgb(21, 102, 102);
+}
+.jumbotron{
+    background-color: rgba(0, 139, 139, 0.425);
+}
+.sbmt-btn{
+    background-color: rgba(165, 42, 42, 0.623);
+}
+.form {
+    margin-left: 25%;
+    padding: 5%;
+    width: 50%;
+    background-color: whitesmoke;
+    border-style: groove;
+    border-color: cadetblue;
+    border-radius: 5%;
+    border-bottom-right-radius: 15%;
+    box-shadow: 20px 20px 20px 20px rgba(58, 110, 110, 0.171);
+}
+.star-icon{
+    width: 8%;
+}
+.fontt{
+    font-family: monospace;
+}
+textarea{
+    line-height: 1.5rem;
+  border: 0;
+  outline: none;
+  font-family: inherit;
+  appearance: none;
+}
