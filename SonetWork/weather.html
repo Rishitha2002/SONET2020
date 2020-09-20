@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+        .card-body{
+            background-color: rgba(216, 191, 216, 0.678);
+        }
+        .weather{
+            background-color:rgb(196, 106, 196) ;
+        }
+        .container{
+            background-color: rgba(245, 222, 179, 0.555);
+        }
+  </style>
+</head>
+<body>
+    <div class="jumbotron bg-info">
+        <h1>Weather</h1>
+    </div>
+    <div class="container">
+        <h1>Select the city to get the report!</h1>
+        <form>
+            <div class="form-group">
+                Select the city:
+            <select id="mySelect">
+                <option value="hyderabad">Hyderabad</option>
+                <option value="bengaluru">Bangalore</option>
+                <option value="tirupati">Tirupati</option>
+                <option value="pune" >Pune</option>
+                <option value="chennai">Chennai</option>
+                <option value="thiruvananthapuram">Thiruvananthapuram</option>
+                <option value="mysore">Mysore</option>
+                <option value="coimbatore">Coimbatore</option>
+                <option value="ooty">Ooty</option>
+                <option value="kanyakumari">Kanyakumari</option>
+                <option value="mangalore">Mangalore</option>
+                <option value="mumbai">Mumbai</option>
+            </select>
+            </div>
+            
+          </form>
+          <p>Click the button to recieve the weather report of the city.</p>
+
+<button type="button" class="form-control weather" onclick="myFunction()"><b>Get Report</b></button><hr>
+        <div class="card">
+            <h1 class="card-header bg-info">Weather Report!</h1>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <h3 id="city_name"></h3>
+                    </div>
+                    <div class="col-6">
+                        <h3 id="mist"></h3>
+                    </div>
+                </div><hr>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <div id="current_temp"></div>
+                        <div id="feelslike"></div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div id="temp_max"></div>
+                        </div>
+                        <div class="row">
+                            <div id="temp_min"></div>
+                        </div>
+                    </div>
+                </div><hr>
+                <div class="row">
+                    <div class="col-6">
+                        <div id="clouds"></div>
+                        <div id="wind_speed"></div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row"><div id="pressure"></div></div>
+                        <div class="row"><div id="humidity"></div></div>
+                        
+                        
+                    </div><hr>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+
+<script>
+function myFunction(){
+    var request = new XMLHttpRequest();
+    var x = document.getElementById("mySelect").value;
+    var s = 'https://api.openweathermap.org/data/2.5/weather?q='+x+'&appid=f73ec92a8ba4c814ba05e9e92e4d2558'
+    request.open('GET',s,true)
+    request.onload = function(){
+        if(request.status >=200 && request.status<400){
+            //succcess
+            var data = JSON.parse(request.responseText);
+            console.log(data);
+            
+            document.getElementById("city_name").innerText = "CITY:"+data.name;
+            document.getElementById("clouds").innerText = "CLOUDS:  "+ data.clouds.all+"%";
+            document.getElementById("feelslike").innerText = "FEELS LIKE:   "+ (data.main.feels_like-273.15)+"°C";
+            document.getElementById("pressure").innerText = "PRESSURE:  "+ data.main.pressure+" millibars";
+            document.getElementById("humidity").innerText = "HUMIDITY:  "+ data.main.humidity+"%";
+            document.getElementById("current_temp").innerText = "TEMPERATURE:   "+ (data.main.temp-273.15)+"°C";
+            document.getElementById("temp_max").innerText = "LOWEST:    "+ (data.main.temp_max-273.15)+"°C";
+            document.getElementById("temp_min").innerText = "HIGHEST:   "+ (data.main.temp_min-273.15)+"°C";
+            document.getElementById("wind_speed").innerText = "WIND:    "+ data.wind.speed+"km/h";
+            document.getElementById("mist").innerText = "OVERALL WEATHER:   "+ data.weather[0].main;
+        }
+        else
+        console.log("error");
+    };
+    request.send();
+
+}
+
+</script>
+
+</body>
+</html>

@@ -65,15 +65,13 @@ a:hover{
     background-color: rgba(165, 42, 42, 0.623);
 }
 .form {
-    margin-left: 25%;
     padding: 5%;
-    width: 50%;
-    background-color: whitesmoke;
-    border-style: groove;
+    background-color: rgb(209, 227, 230);
+    border-style: solid;
     border-color: cadetblue;
-    border-radius: 5%;
-    border-bottom-right-radius: 15%;
-    box-shadow: 20px 20px 20px 20px rgba(58, 110, 110, 0.171);
+    border-radius: 20px;
+    border-bottom-right-radius: 50px;
+    box-shadow: inset 0px 0px 50px 10px cadetblue;
 }
 .star-icon{
     width: 8%;
@@ -88,3 +86,26 @@ textarea{
   font-family: inherit;
   appearance: none;
 }
+.comment{
+    border-style: solid;
+    border: thistle;
+    background-color: white;
+}
+
+.email_comment{
+    color: grey;
+}
+.comment_comment{
+    border-style: solid;
+    border-color: rgba(183, 216, 218,0.8);
+    background-color: rgba(21, 102, 102,0.2);;
+    font-weight: 700;
+}
+.comments{
+    background-color: rgba(165,42,42,0.2);
+}
+.carousel-image{
+    height: 25%;
+    width: 25%;
+}
+

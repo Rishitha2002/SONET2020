@@ -5,10 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="./gallerycss.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    <link rel="stylesheet" href="./gallerycss.css"/>
     <title>Document</title>
 </head>
 <body>
+    <div class="modal" tabindex="-1"  id="loginModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(21, 102, 102);">
+                    <h4 class="modal-title" >Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button> 
+                </div>
+                <div class="modal-body" style="background-color: rgba(0, 139, 139, 0.425)">
+                    <form>
+                        <div class="form-group">
+                            <label for="nameLogin">Username</label>
+                            <input class="form-control" type="text" id="nameLogin" name="nameLogin" placeholder="Username or Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="nameLogin">password</label>
+                            <input class="form-control" type="password" id="nameLogin" name="nameLogin" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn sbmt-btn offset-sm-10">LOGIN </button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    
+        
+    </div>
     <nav class="navbar navbar-light navbar-expand-sm sticky-top nav" > 
         <div class="collapse navbar-collapse" id="Navbar">
             <ul class="navbar-nav">
@@ -23,6 +52,9 @@
             <a href="./contactus.html" class="nav-link">Contact Us</a>
            
         </div>
+        <div>
+            <a type="button" data-toggle="modal" data-target="#loginModal" class="nav-link"><img class="bell-icon" src="./memes/bell-icon2.png">Login</a>
+       </div> 
         <div></div>
   
     </nav>

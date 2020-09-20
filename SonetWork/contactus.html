@@ -5,22 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="./gallerycss.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>   <link rel="stylesheet" href="./gallerycss.css"/>
     <title>Document</title>
-    <!--<script>
+    <script>
+        var comments = [];
         function myFunction(){
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var feedback = document.getElementById("feedback").value;
-            (234);
-            alert(name);
-            alert(email);
-            alert(feedback);
+            var newComment = {};
+            var n = document.getElementById("name").value;
+            var e = document.getElementById("email").value;
+            var ta = document.getElementById("feedback").value;
+            console.log("name = "+n );
+            console.log("email = "+e);
+            console.log("feedback = "+ta);
+            newComment.name = n;
+            newComment.email = e;
+            newComment.comment = ta;
+            comments.push(newComment);
+            var l = (comments.length)-1;
+            var h =document.getElementById("commentsHere");
+            var n="<div class='name_comment'>"+comments[l].name;
+            var e="<super class='email_comment'>"+comments[l].email+"</super>";
+            var c="<div class='comment_comment'>"+comments[l].comment+"</div>";
+            
+            var row = "<tr class='name_comment'>"+n+" "+e+"</tr>";
+            var row2 = "<tr>"+c+"</tr><hr class='shadow'>";
+            
+            h.insertAdjacentHTML("beforeend",row );
+            h.insertAdjacentHTML("beforeend",row2 );
+            
         }
-    </script>-->
+        
+        //(function () {
+        //    alert("hey");
+        //    var h = document.getElementById("commentsHere");
+        //    h.insertAdjacentHTML("beforeend", "<h1>heyyyy!!</h1>");
+        
+        //}());
+        /*function displayComments(){
+
+            for (var i in comments){
+                var h =document.getElementById("commentsHere");
+                var n="<div>"+comments[i].name+"</div>";
+                var e="<div>"+comments[i].email+"</div>";
+                var c="<div>"+comments[i].comment+"</div>";
+                h.insertAdjacentHTML("beforeend", n);
+                h.insertAdjacentHTML("beforeend",e );
+                h.insertAdjacentHTML("beforeend",c );
+                
+            }
+            
+        }*/
+    </script>
 
 </head>
 <body>
+    <div class="modal" tabindex="-1"  id="loginModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(21, 102, 102);">
+                    <h4 class="modal-title" >Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button> 
+                </div>
+                <div class="modal-body" style="background-color: rgba(0, 139, 139, 0.425)">
+                    <form>
+                        <div class="form-group">
+                            <label for="nameLogin">Username</label>
+                            <input class="form-control" type="text" id="nameLogin" name="nameLogin" placeholder="Username or Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="nameLogin">password</label>
+                            <input class="form-control" type="password" id="nameLogin" name="nameLogin" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn sbmt-btn offset-sm-10">LOGIN </button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    
+        
+    </div>
     <nav class="navbar navbar-light navbar-expand-sm sticky-top nav" > 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
             <span class="navbar-toggler-icon"></span>
@@ -38,6 +105,9 @@
             <a href="#" class="nav-link">Contact Us</a>
            
         </div> 
+        <div>
+            <a type="button" data-toggle="modal" data-target="#loginModal" class="nav-link"><img class="bell-icon" src="./memes/bell-icon2.png">Login</a>
+       </div> 
         
     </nav>
     <div class="jumbotron" >
@@ -48,9 +118,10 @@
             <a href="./gallery.html">Back</a>
         </div><br>
         <h1>Contact us</h1><br>
-        <div class="row form">
-            <h1 style="font-family: fantasy; color: rgb(73, 124, 126);">Review</h1>
-            <form>
+        <div class="row form offset-sm-3 col-12 col-sm-6">
+            <div class="col-12">
+                <h1 class="row" style="font-family: fantasy; color: rgb(73, 124, 126);">Review</h1>
+            <form class="row">
 
                 
                 <div class="form-group">
@@ -61,7 +132,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <label class="fontt" for="rating">Rate us:  </label>
+                    <label class="fontt " for="rating">Rate us:  </label>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                         <label class="form-check-label" for="inlineRadio1">1</label>
@@ -75,11 +146,11 @@
                         <label class="form-check-label" for="inlineRadio3">3</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" checked>
                         <label class="form-check-label" for="inlineRadio4">4</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
                         <label class="form-check-label" for="inlineRadio5">5</label>
                       </div><hr><hr>
                       <div class="form-group row">
@@ -89,12 +160,27 @@
                         <input class="form-control fontt offset-sm-6" type="text" name="email" placeholder="Your email..." id="email"/>
                     </div>
                 </div><hr><hr>
-                <button type="submit" onclick="myfunction();" class="btn sbmt-btn offset-sm-10">Send</button>
+                
             </form>
+            <div class="row">
+                <button type="submit" onclick=myFunction(),displayComments(); class="btn sbmt-btn offset-sm-10">Send</button>
+            </div>
+            </div>
+            
         </div>
         <br><br><br>    
     </div>
     <hr>
+    <div class="container comments">
+        <h1>COMMENTS</h1>
+        <hr>
+        <div class="comments-comment">
+            <table id="commentsHere" class="commentss">
+
+            </table>
+        </div>
+        
+    </div>
     <hr>
 </body>
 </html>
