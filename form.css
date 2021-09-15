@@ -1,0 +1,27 @@
+.heading {
+    color: dodgerblue;
+    background-color: gainsboro;
+}
+form {
+    width: 50%;
+    margin: auto;
+    background-color: rgba(95, 160, 130, 0.616);
+    padding-bottom: 50px ;
+}
+input{
+    height:25px;
+    border:none;
+}
+.submit-btn {
+    background-color: dodgerblue;
+    color: gainsboro;
+    height: 40px;
+    width: 200px;
+}
+.register-btn {
+    background-color: gainsboro;
+    text-decoration: none;
+    color :black;
+    height: 40px;
+    width: 200px;
+}
