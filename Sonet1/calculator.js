@@ -6,3 +6,6 @@ function getAnswer() {
     let b = eval(a.toString())
     document.getElementById("answer").innerHTML = b
 }
+function reset() {
+    document.getElementById("answer").innerHTML = " ";
+}
